@@ -12,7 +12,7 @@ class CardOrderTest {
 //успешная отправка
     @Test
     void shouldSuccess() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("Василий Васильев");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -22,7 +22,7 @@ class CardOrderTest {
    //ФИО по-английски
     @Test
     void shouldHaveEnglishSymbols() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("Vasily");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -34,7 +34,7 @@ class CardOrderTest {
     //ФИО с цифрами
     @Test
     void shouldHaveNumbersFIO() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("В1силий");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -46,7 +46,7 @@ class CardOrderTest {
     //ФИО со спецсимволами
     @Test
     void shouldHaveSpecialCharacters() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("В@силий");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[data-test-id=agreement]").click();
@@ -58,7 +58,7 @@ class CardOrderTest {
     //номер телефона без + в начале
     @Test
     void shouldHaveNotPlus() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("Василий Васильев");
         $("[data-test-id=phone] input").setValue("79270000000");
         $("[data-test-id=agreement]").click();
@@ -70,7 +70,7 @@ class CardOrderTest {
     //номер телефона имеет меньше 11 цифр
     @Test
     void shouldHaveLessThanElevenNumbers() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("Василий Васильев");
         $("[data-test-id=phone] input").setValue("+7927000000");
         $("[data-test-id=agreement]").click();
@@ -82,7 +82,7 @@ class CardOrderTest {
     //номер телефона имеет больше 11 цифр
     @Test
     void shouldHaveMoreThanElevenNumbers() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("Василий Васильев");
         $("[data-test-id=phone] input").setValue("+792700000000");
         $("[data-test-id=agreement]").click();
@@ -106,7 +106,7 @@ class CardOrderTest {
     //нет согласия по персональным данным
     @Test
     void shouldAgreementFalse() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         $("[type=text]").setValue("Василий Васильев");
         $("[data-test-id=phone] input").setValue("+79270000000");
         $("[type=button]").click();
